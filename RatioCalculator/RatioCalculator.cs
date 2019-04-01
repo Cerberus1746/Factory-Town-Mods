@@ -3,14 +3,29 @@ using System.Collections;
 using UnityEngine;
 using UnityModManagerNet;
 using System;
+using System.IO;
 
 namespace RatioCalculatorMod
 {
-    class RatioCalculator
+    class RatioCalculator : MonoBehaviour
     {
+        string assetPath = "";
+
         public void OnUpdate(UnityModManager.ModEntry modEntry, float dt)
         {
-
+            /*if (assetPath == "")
+            {
+                this.assetPath = "D:\\Program Files (x86)\\Steam\\steamapps\\common\\Factory Town\\Factory Town_Data\\StreamingAssets\\AssetBundles\\ui";
+                var loadedAssetBundle = AssetBundle.LoadFromFile(assetPath);
+                if (loadedAssetBundle == null)
+                {
+                    modEntry.Logger.Log("Failed to load AssetBundles! " + assetPath);
+                } else {
+                    modEntry.Logger.Log("Succesfully loaded AssetBundles!");
+                    GameObject asset = loadedAssetBundle.LoadAsset<GameObject>("ModUI");
+                    Instantiate(asset);
+                }
+            }*/
             if (Input.GetKeyDown(KeyCode.F7))
             {
                 if (CustomCursor.Instance.selectedTarget.isAssigned)
@@ -76,8 +91,8 @@ namespace RatioCalculatorMod
         static bool Load(UnityModManager.ModEntry modEntry)
         {
             RatioCalculator ratioCalculator = new RatioCalculator();
-            modEntry.OnUpdate = ratioCalculator.OnUpdate;
 
+            modEntry.OnUpdate = ratioCalculator.OnUpdate;
             return true;
         }
     }
