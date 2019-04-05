@@ -8,20 +8,41 @@ namespace HappinessSetter
     public class HappinessSetter : MonoBehaviour
     {
         public static float currentHappiness = 0.0f;
+        public static bool isSetterActive = false;
+        public static float originalValue = 0.0f;
+
         public void OnUpdate(UnityModManager.ModEntry modEntry, float dt)
         {
-            if (Input.GetKeyDown(KeyCode.Equals))
+            if (HappinessSetter.isSetterActive)
             {
+                if (Input.GetKeyDown(KeyCode.Equals))
+                {
+                    HappinessSetter.currentHappiness += 0.1f;
+                    GameManager.Instance.CalculateHappiness();
 
-                HappinessSetter.currentHappiness += 0.1f;
-                GameManager.Instance.CalculateHappiness();
+                } else if (Input.GetKeyDown(KeyCode.Minus))
+                {
+                    HappinessSetter.currentHappiness -= 0.1f;
+                    GameManager.Instance.CalculateHappiness();
+                }
             }
-            else if (Input.GetKeyDown(KeyCode.Minus))
+
+            if (Input.GetKeyDown(KeyCode.P))
             {
-                HappinessSetter.currentHappiness -= 0.1f;
-                GameManager.Instance.CalculateHappiness();
+                if (HappinessSetter.isSetterActive)
+                {
+                    GameManager.Instance.happinessProductionModifier = HappinessSetter.originalValue;
+                    GameManager.Instance.CalculateHappiness();
+                    HappinessSetter.isSetterActive = false;
+
+                } else
+                {
+                    HappinessSetter.originalValue = GameManager.Instance.happinessProductionModifier;
+                    GameManager.Instance.CalculateHappiness();
+                    HappinessSetter.isSetterActive = true;
+                }
             }
-            
+
         }
     }
 
@@ -31,7 +52,10 @@ namespace HappinessSetter
     {
         static void Postfix(ref GameManager __instance)
         {
-            __instance.happinessProductionModifier = HappinessSetter.currentHappiness;
+            if (HappinessSetter.isSetterActive)
+            {
+                __instance.happinessProductionModifier = HappinessSetter.currentHappiness;
+            }
         }
     }
 

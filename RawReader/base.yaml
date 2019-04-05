@@ -1,0 +1,20 @@
+﻿object: building
+	name: Barn
+	description: """A barn is a special storage structure.
+	Any item you place there is usable when placing a new building or purchasing an upgrade."""
+
+	type: container
+		inventory:
+			item_types: 4
+			item_capacity: 50
+			is_shared: true
+	grid:
+		x: 3
+		y: 3
+
+	asset:
+		texture: barn.png
+		model: barn.obj
+		material: barn.mat
+
+		bundle: barn

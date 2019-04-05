@@ -1,0 +1,7 @@
+﻿{
+  "Id": "moddingscript",
+  "DisplayName": "Modding Script",
+  "Version": "0.0.1",
+  "AssemblyName": "ModdingScript.dll",
+  "EntryMethod": "ModdingScript.Main.Load"
+}

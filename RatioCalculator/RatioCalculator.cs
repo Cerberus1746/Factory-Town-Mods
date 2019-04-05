@@ -1,16 +1,11 @@
 ﻿using System.Collections.Generic;
-using System.Collections;
 using UnityEngine;
 using UnityModManagerNet;
-using System;
-using System.IO;
 
 namespace RatioCalculatorMod
 {
     class RatioCalculator : MonoBehaviour
     {
-        string assetPath = "";
-
         public void OnUpdate(UnityModManager.ModEntry modEntry, float dt)
         {
             /*if (assetPath == "")
