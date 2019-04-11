@@ -1,0 +1,7 @@
+﻿{
+  "Id": "HugeSilo",
+  "DisplayName": "Huge Silo",
+  "Version": "0.0.1",
+  "AssemblyName": "HugeSilo.dll",
+  "EntryMethod": "HugeSilo.Main.Load"
+}

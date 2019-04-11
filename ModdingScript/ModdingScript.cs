@@ -8,9 +8,7 @@ namespace ModdingScript
     {
         readonly ScriptEngine engine = new ScriptEngine();
 
-        public void Main(UnityModManager.ModEntry modEntry) {
-            modEntry.Logger.Log(engine.Evaluate<string>("1.5 + 2.3").ToString());
-        }
+        public void Main(UnityModManager.ModEntry modEntry) => modEntry.Logger.Log(this.engine.Evaluate<string>("1.5 + 2.3").ToString());
     }
 
 

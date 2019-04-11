@@ -63,7 +63,7 @@ namespace HappinessSetter
     {
         static bool Load(UnityModManager.ModEntry modEntry)
         {
-            var harmony = HarmonyInstance.Create(modEntry.Info.Id);
+            HarmonyInstance harmony = HarmonyInstance.Create(modEntry.Info.Id);
             harmony.PatchAll(Assembly.GetExecutingAssembly());
 
             HappinessSetter ratioCalculator = new HappinessSetter();

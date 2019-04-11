@@ -1,7 +1,10 @@
 ﻿/.vs
-/Jurassic
-/Unity Project/Factory Town Modding
+/Unity Project/
 *.nupkg
 *.p7s
 *.nlp
 *.pdb
+*.nlp
+*/obj/*
+*/bin/*
+/Mod Manager
