@@ -1,7 +1,0 @@
-﻿{
-  "Id": "happinesssetter",
-  "DisplayName": "Happiness Setter",
-  "Version": "0.0.1",
-  "AssemblyName": "HappinessSetter.dll",
-  "EntryMethod": "HappinessSetter.Main.Load"
-}

@@ -7,8 +7,8 @@ namespace RatioCalculatorMod {
     class RatioCalculator : MonoBehaviour {
         public void OnUpdate(UnityModManager.ModEntry modEntry, float dt) {
             if (Input.GetKeyDown(KeyCode.F7)) {
-                if (CustomCursor.Instance.selectedTarget.isAssigned) {
-                    Building currentBuilding = CustomCursor.Instance.selectedTarget.building;
+                if (CustomCursor.Instance.selectedWorldEntities.isAssigned) {
+                    Building currentBuilding = CustomCursor.Instance.selectedWorldEntities.GetAnyBuilding();
                     Dictionary<string, float> outputList = new Dictionary<string, float>();
                     Dictionary<string, float> inputList = new Dictionary<string, float>();
 
