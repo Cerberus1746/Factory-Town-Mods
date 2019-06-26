@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Factory Town">
-  <Folder>Factory Town</Folder>
-  <ModsDirectory>Mods</ModsDirectory>
-  <ModInfo>Info.json</ModInfo>
-  <GameExe>Factory Town.exe</GameExe>
-  <EntryPoint>[UnityEngine.UIModule.dll]UnityEngine.Canvas.cctor:After</EntryPoint>
-  <StartingPoint>[Assembly-CSharp.dll]Platform.Awake:After</StartingPoint>
-</Config>
