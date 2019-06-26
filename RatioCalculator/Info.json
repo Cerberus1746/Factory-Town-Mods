@@ -1,7 +1,0 @@
-﻿{
-  "Id": "ratiocalculator",
-  "DisplayName": "Ratio Calculator",
-  "Version": "0.0.1",
-  "AssemblyName": "RatioCalculator.dll",
-  "EntryMethod": "RatioCalculatorMod.Main.Load"
-}
